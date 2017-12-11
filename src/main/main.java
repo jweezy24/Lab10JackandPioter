@@ -42,11 +42,15 @@ public class main {
         myMap.addEdge(IL, MO);
         myMap.addEdge(IL, WI);
         myMap.addEdge(IL, KY);
+        myMap.addEdge(IL, IA);
         myMap.addEdge(KY, OH);
         myMap.addEdge(KY, IN);
+        myMap.addEdge(KY, MO);
+        myMap.addEdge(MO, IA);
         myMap.addEdge(MI, IN);
         myMap.addEdge(MI, OH);
         myMap.addEdge(OH, IN);
+        myMap.addEdge(WI, IA);
 
         final Iterator<String> bf = new BreadthFirstIterator<>(myMap, MO);
         System.out.println("Breadth First Algorithm");
@@ -72,11 +76,11 @@ public class main {
         System.out.println(coloring.getColoring());
 
 
-        //final Iterator<String> rw = new RandomWalkIterator<>(myMap, MO);
-        //while (rw.hasNext()) {
-         //   final String country = rw.next();
-          //  System.out.println(country);
-        //}
+        final Iterator<String> rw = new RandomWalkIterator<>(myMap, MO,true,8);
+        while (rw.hasNext()) {
+            final String country = rw.next();
+            System.out.println(country);
+        }
 
 
 
