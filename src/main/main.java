@@ -53,21 +53,39 @@ public class main {
         myMap.addEdge(WI, IA);
 
         final Iterator<String> bf = new BreadthFirstIterator<>(myMap, MO);
-        System.out.println("Breadth First Algorithm");
+        System.out.println("Breadth First Algorithm starting at Missouri");
         while (bf.hasNext()) {
             final String country = bf.next();
             System.out.println(country);
         }
-        System.out.println("Closest First Algorithm");
+        final Iterator<String> bf2 = new BreadthFirstIterator<>(myMap, IL);
+        System.out.println("Breadth First Algorithm starting at Illinois");
+        while (bf2.hasNext()) {
+            final String country = bf2.next();
+            System.out.println(country);
+        }
+        System.out.println("Closest First Algorithm starting at Missouri");
         final Iterator<String> cf = new ClosestFirstIterator<>(myMap, MO);
         while (cf.hasNext()) {
             final String country = cf.next();
             System.out.println(country);
         }
-        System.out.println("Depth First Algorithm");
+        System.out.println("Closest First Algorithm starting at Illinois");
+        final Iterator<String> cf2 = new ClosestFirstIterator<>(myMap, IL);
+        while (cf2.hasNext()) {
+            final String country = cf2.next();
+            System.out.println(country);
+        }
+        System.out.println("Depth First Algorithm starting at Missouri");
         final Iterator<String> df = new DepthFirstIterator<>(myMap, MO);
         while (df.hasNext()) {
             final String country = df.next();
+            System.out.println(country);
+        }
+        System.out.println("Depth First Algorithm starting at Illinois");
+        final Iterator<String> df2 = new DepthFirstIterator<>(myMap, IL);
+        while (df2.hasNext()) {
+            final String country = df2.next();
             System.out.println(country);
         }
 
@@ -75,13 +93,18 @@ public class main {
 
         System.out.println(coloring.getColoring());
 
-
-        final Iterator<String> rw = new RandomWalkIterator<>(myMap, MO,true,8);
+        System.out.println("Random Walk Algorithm starting at Missouri");
+        final Iterator<String> rw = new RandomWalkIterator<>(myMap, MO,false,8);
         while (rw.hasNext()) {
             final String country = rw.next();
             System.out.println(country);
         }
-
+        System.out.println("Random Walk Algorithm starting at Illinois");
+        final Iterator<String> rw2 = new RandomWalkIterator<>(myMap, IL,false,8);
+        while (rw2.hasNext()) {
+            final String country = rw2.next();
+            System.out.println(country);
+        }
 
 
 
